@@ -59,7 +59,7 @@ class InteractiveRecord
   end
 
   def self.find_by(att)
-    sql = "SELECT * FROM #{self.table_name} WHERE CAST(colname as VARCHAR(10)) LIKE '123%' '#{att}' = '#{att}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE CAST(colname as VARCHAR(10)) '#{att}' = '#{att}'"
     DB[:conn].execute(sql)
   end
 
