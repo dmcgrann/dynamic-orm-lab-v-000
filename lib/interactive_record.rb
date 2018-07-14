@@ -60,7 +60,7 @@ class InteractiveRecord
 
   def self.find_by(att)
     sql = "SELECT * FROM #{self.table_name} WHERE CAST(att as text) '#{att}' = '#{att}'"
-    DB[:conn].execute(sql, att)
+    DB[:conn].execute(sql).flatten
   end
 
 end
