@@ -1,6 +1,6 @@
 require_relative "../config/environment.rb"
 require 'active_support/inflector'
-require 'numbers_and_words'
+
 
 class InteractiveRecord
 
