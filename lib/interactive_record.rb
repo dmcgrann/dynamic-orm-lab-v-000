@@ -59,7 +59,7 @@ class InteractiveRecord
   end
 
   def self.find_by(att)
-    sql = "SELECT replace(replace(Name,char(10),''),char(13),'') * FROM #{self.table_name} WHERE '#{att}' = '#{att}'"
+    sql = "SELECT CAST(AS TEXT) * FROM #{self.table_name} WHERE '#{att}' = '#{att}'"
     DB[:conn].execute(sql)
   end
 
