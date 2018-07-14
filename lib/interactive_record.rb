@@ -60,7 +60,7 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(att)
+  def self.find_by(att={})
     sql = "SELECT * FROM #{self.table_name} WHERE '#{att.to_s}' = '#{att.first}'"
     DB[:conn].execute(sql)
   end
