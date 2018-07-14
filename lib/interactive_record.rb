@@ -60,8 +60,8 @@ class InteractiveRecord
     DB[:conn].execute(sql)
   end
 
-  def self.find_by(options={})
-    sql = "SELECT * FROM #{self.table_name} WHERE '#{options.keys.to_s}' = '#{options[options.keys.first]}'"
+  def self.find_by(att)
+    sql = "SELECT * FROM #{self.table_name} WHERE '#{att.keys.to_s}' = '#{att[0].keys.first}'"
     DB[:conn].execute(sql)
   end
 
