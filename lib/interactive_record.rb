@@ -59,7 +59,7 @@ class InteractiveRecord
   end
 
   def self.find_by(att)
-    sql = "SELECT * FROM #{self.table_name} '#{att}' = '#{att}'"
+    sql = "SELECT * FROM #{self.table_name} WHERE CAST(#{col_names_for_insert} to string) '#{att}' = '#{att}'"
     DB[:conn].execute(sql)
   end
 
